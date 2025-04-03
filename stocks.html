@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lady Don's Stocks</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #0d0d0d;
+            color: #f1f1f1;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: #ff9800;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+        }
+
+        .navbar-logo h1 {
+            font-size: 28px;
+            margin: 0;
+            color: #fff;
+        }
+
+        .navbar-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .navbar-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .navbar-links a:hover {
+            color: #222;
+        }
+
+        /* Stocks Section */
+        .stocks-section {
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .stocks-section h3 {
+            font-size: 36px;
+            color: #ff9800;
+            margin-bottom: 20px;
+        }
+
+        .stocks-section p {
+            font-size: 18px;
+            color: #bbb;
+            margin-bottom: 40px;
+        }
+
+        /* Stock Cards */
+        .stock-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 0 20px;
+        }
+
+        .stock-card {
+            background-color: #1a1a1a;
+            border: 2px solid #ff9800;
+            border-radius: 10px;
+            padding: 20px;
+            cursor: pointer;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .stock-card h4 {
+            color: #ff9800;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .stock-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(255, 152, 0, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #222;
+            color: white;
+        }
+
+        footer a {
+            color: #ff9800;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="navbar-logo">
+            <h1>Lady Don Stocks</h1>
+        </div>
+        <ul class="navbar-links">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="stocks-section">
+        <h3>Market Insights</h3>
+        <p>Select Stock to check the market Insights.</p>
+        <div class="stock-grid">
+            <div class="stock-card" onclick="redirectToApp('AAPL')">
+                <h4>Apple (AAPL)</h4>
+            </div>
+            <div class="stock-card" onclick="redirectToApp('TSLA')">
+                <h4>Tesla (TSLA)</h4>
+            </div>
+            <div class="stock-card" onclick="redirectToApp('BTC-USD')">
+                <h4>Bitcoin (BTC-USD)</h4>
+            </div>
+            <div class="stock-card" onclick="redirectToApp('ETH-USD')">
+                <h4>Ethereum (ETH-USD)</h4>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; All Rights Reserved to Lady Don</p>
+    </footer>
+
+    <script>
+        function redirectToApp(stockSymbol) {
+            const url = `https://www.google.com/finance/quote/${stockSymbol}:NASDAQ`;
+            window.open(url, "_blank");
+        }
+    </script>
+</body>
+
+</html>

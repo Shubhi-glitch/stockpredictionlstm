@@ -1,0 +1,148 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #ffffff;
+    background-color: #121212;
+    line-height: 1.6;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #1a1a1a;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-logo h1 {
+    color: #ff9800;
+    font-size: 2em;
+}
+
+.navbar-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.navbar-links li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1em;
+    transition: color 0.3s ease;
+}
+
+.navbar-links li a:hover {
+    color: #ff9800;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    background: linear-gradient(to right, #ff9800, #ff5722);
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.hero h2 {
+    font-size: 2.8em;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 1.3em;
+    margin-bottom: 25px;
+}
+
+.hero-button {
+    background-color: #ffffff;
+    color: #ff5722;
+    padding: 15px 35px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.hero-button:hover {
+    background-color: #ff9800;
+    color: white;
+    transform: scale(1.05);
+}
+
+/* Stock Section */
+.stocks-section {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.stocks-section h3 {
+    font-size: 2.2em;
+    margin-bottom: 20px;
+    color: #ff9800;
+}
+
+.stocks-section p {
+    margin-bottom: 35px;
+    color: #ccc;
+}
+
+/* Stock Cards */
+.stock-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    padding: 0 20px;
+}
+
+.stock-card {
+    background-color: #1f1f1f;
+    border-radius: 12px;
+    padding: 25px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.stock-card h4 {
+    color: #ff9800;
+    font-size: 1.6em;
+    margin-bottom: 10px;
+}
+
+.stock-card p {
+    color: #aaa;
+    font-size: 1em;
+}
+
+.stock-card:hover {
+    transform: translateY(-5px);
+    background-color: #292929;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 25px 0;
+    background-color: #1a1a1a;
+    color: white;
+    font-size: 0.9em;
+}
+
+footer a {
+    color: #ff9800;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}

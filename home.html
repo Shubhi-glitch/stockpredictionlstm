@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Market Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/luxon@^1.0.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-luxon@^1.0.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-chart-financial"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        .sidebar {
+            width: 250px;
+            background: #f4f4f4;
+            padding: 15px;
+        }
+        .main-content {
+            flex: 1;
+            padding: 20px;
+        }
+        .taskbar {
+            display: flex;
+            justify-content: space-between;
+            background: #fff;
+            padding: 10px;
+            border-bottom: 2px solid #ddd;
+        }
+        canvas {
+            max-width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h3>Stock List</h3>
+        <ul>
+            <li>NIFTY 50</li>
+            <li>TCS</li>
+            <li>HDFCBANK</li>
+            <li>INFY</li>
+        </ul>
+    </div>
+    <div class="main-content">
+        <div class="taskbar">
+            <span>Dashboard</span>
+            <span>Orders</span>
+            <span>Holdings</span>
+            <span>Positions</span>
+            <span>Bids</span>
+            <span>Funds</span>
+        </div>
+        <canvas id="candlestickChart"></canvas>
+    </div>
+
+    <script>
+        const ctx = document.getElementById('candlestickChart').getContext('2d');
+        const data = [
+            { t: '2024-03-01', o: 100, h: 110, l: 95, c: 105 },
+            { t: '2024-03-02', o: 105, h: 115, l: 102, c: 110 },
+            { t: '2024-03-03', o: 110, h: 120, l: 108, c: 115 }
+        ];
+        
+        const chart = new Chart(ctx, {
+            type: 'candlestick',
+            data: {
+                datasets: [{
+                    label: 'Stock Prices',
+                    data: data
+                }]
+            }
+        });
+    </script>
+</body>
+</html>
